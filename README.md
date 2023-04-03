@@ -1,6 +1,9 @@
 # sd-webui-stopmotion
 ![ezgif com-crop](https://user-images.githubusercontent.com/2740936/229401064-f42c353b-9eae-47e6-97a5-036c5e40f418.gif)
+
 Make a quick GIF animation using ControlNet to guide the frames in a stop motion pipeline
+
+**Disclaimer**: This extension will enable the Gradio Queue which as of 4/2/2023 has a bug that prevents the button to reload UI to work properly. 
 
 ## Installation
 Add this extension through the extensions tab, Install from URL and paste this repository URL: 
