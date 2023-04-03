@@ -3,8 +3,6 @@
 
 Make a quick GIF animation using ControlNet to guide the frames in a stop motion pipeline
 
-**Disclaimer**: This extension will enable the Gradio Queue which as of 4/2/2023 has a bug that prevents the button to reload UI to work properly. 
-
 ## Installation
 Add this extension through the extensions tab, Install from URL and paste this repository URL: 
 
@@ -20,6 +18,9 @@ Add this extension through the extensions tab, Install from URL and paste this r
 ** As a recomendation use numbered files (Ex: 1.png, 2.png, 3.png ...)
 
 *** The individual frames will be saved as normal in the corresponding txt2img or img2img output folder, but only the gif will be shown then the processing is done. 
+
+## Changelog:
+- Updated to be compatible with the latest update (Gradio version update)
 
 ## TODO:
 - Handle output FPS
