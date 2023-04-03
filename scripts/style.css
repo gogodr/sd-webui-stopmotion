@@ -1,0 +1,37 @@
+#smcn-tabs_container .column .block {
+  max-height: 400px;
+  height: 400px;
+  overflow: auto;
+}
+#smcn-tabs_container .cn_controls {
+  display: flex;
+}
+
+#smcn-tabs_container .file-preview .file-size {
+  display: none;
+}
+
+#smcn-tabs_container .gr-block {
+  display: flex;
+  flex-direction: column;
+}
+
+#smcn-main_container .gr-block label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  top: auto;
+  left: auto;
+}
+
+#smcn-main_container .gr-block input,
+#smcn-main_container .gr-block label span {
+  position: relative;
+  top: auto;
+  left: auto;
+  margin: 0px;
+}
+#smcn-main_container .gr-block input.gr-text-input {
+  width: fit-content;
+}
