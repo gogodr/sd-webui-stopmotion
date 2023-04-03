@@ -147,8 +147,6 @@ class Script(scripts.Script):
         args.append(cn_modules)
         fps = controlsMap[f"FPS"]
         args.append(fps)
-        print(f"cn_modules: {cn_modules}")
-        print(f"fps: {fps}")
         for cn_mod in range(1, max_models+1):
             cn_model = controlsMap[f"TAB-"+str(cn_mod)]["CN_MODEL"]
             args.append(cn_model)
@@ -160,8 +158,6 @@ class Script(scripts.Script):
             args.append(weight)
             files = controlsMap[f"TAB-"+str(cn_mod)]["FILES"]
             args.append(files)
-        print("pre args")
-        print(args)
         return args
 
     def run(self, p, *args):
@@ -191,7 +187,7 @@ class Script(scripts.Script):
             index += 1  
         for frame_i in range(frame_count):
             cn_layers = [] 
-            frame = Image.open(args_map[f"cn-{cn_mod}"]["files"][frame_i])
+            frame = Image.open(args_map[f"cn-{cn_mod}"]["files"][frame_i].name)
             nimg = np.array(frame.convert("RGB"))
             bimg = np.zeros((frame.width, frame.height, 3), dtype = np.uint8)
             for cn_mod in range(1, args_map["cn_modules"]+1):

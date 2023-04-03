@@ -1,13 +1,8 @@
 console.log("Custom script loaded");
 const style = document.createElement('style');
 style.innerHTML = css;
-document
-  .querySelector("gradio-app")
-  .shadowRoot.append(style);
-  
-document
-  .querySelector("gradio-app")
-  .shadowRoot.querySelectorAll(
+gradioApp().head.append(style);  
+  gradioApp().querySelectorAll(
     "#smcn-tabs_container .tabs > div:first-child button"
   )
   .forEach((btn, i) => {
@@ -19,9 +14,7 @@ document
   });
 
 window.smcn_updateTabs = (index) => {
-  document
-    .querySelector("gradio-app")
-    .shadowRoot.querySelectorAll(
+  gradioApp().querySelectorAll(
       "#smcn-tabs_container .tabs > div:first-child button"
     )
     .forEach((btn, i) => {
