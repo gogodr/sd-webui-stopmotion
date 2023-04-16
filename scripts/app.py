@@ -47,7 +47,7 @@ def merge_frames(files):
 
 def save_gif(p, frames):
     outpath = os.path.join(p.outpath_samples, "cn_stopmotion")    
-    gif_filename = (modules.images.save_image(frames[0], outpath, "gif2gif", extension = 'gif')[0])    
+    gif_filename = (modules.images.save_image(frames[0], outpath, "stopmotion", extension = 'gif')[0])    
     frames[0].save(gif_filename,
         save_all = True, append_images = frames[1:], loop = 0,
         optimize = False, duration = len(frames)*5)
@@ -55,7 +55,7 @@ def save_gif(p, frames):
 
 def save_png(p, proc):
     outpath = os.path.join(p.outpath_samples, "cn_stopmotion") 
-    png_filename = modules.images.save_image(proc.images[0], outpath, "gif2gif", extension='png',info = proc.info)[0]   
+    png_filename = modules.images.save_image(proc.images[0], outpath, "stopmotion", extension='png',info = proc.info)[0]   
     return png_filename
 
 def createTab(i):
