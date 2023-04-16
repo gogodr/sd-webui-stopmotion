@@ -53,6 +53,10 @@ def save_gif(p, frames):
         optimize = False, duration = len(frames)*5)
     return gif_filename
 
+def save_png(p, proc):
+    outpath = os.path.join(p.outpath_samples, "cn_stopmotion") 
+    png_filename = modules.images.save_image(proc.images[0], outpath, "gif2gif", extension='png',info = proc.info)[0]   
+    return png_filename
 
 def createTab(i):
     with gr.Tab(label=f"ControlNet ({i})", elem_id=f"smcn-tab-{i}", id=f"tab-{i}") as tab:
@@ -184,7 +188,7 @@ class Script(scripts.Script):
             else:
                 if len(args_map[f"cn-{cn_mod}"]["files"]) != frame_count:
                     raise ValueError(f"Frames missmatch, make sure that you put the same number of frames on each module")
-            index += 1  
+            index += 1
         for frame_i in range(frame_count):
             cn_layers = [] 
             frame = Image.open(args_map[f"cn-{cn_mod}"]["files"][frame_i].name)
@@ -210,6 +214,7 @@ class Script(scripts.Script):
                 initial_seed = proc.seed
                 initial_info = proc.info
             frames.append(proc.images[0])      
-            gif = save_gif(p, frames)  
+            save_png(p,proc)
+        gif = save_gif(p, frames)  
         processed = Processed(p, [gif], initial_seed, initial_info)
         return processed
